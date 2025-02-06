@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.recharts-cartesian-axis-tick-value {
+    display: none;
+  }
