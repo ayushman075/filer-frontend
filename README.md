@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Filer Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Filer Frontend is a React-based web application built using Vite and TypeScript. It provides an intuitive user interface for authentication, file uploads, and data analytics. The frontend consumes APIs from the Filer Backend and offers an interactive user experience with charts and tables.
 
-Currently, two official plugins are available:
+## Features
+- User authentication (login/signup)
+- File upload interface
+- Interactive analytics dashboards using Recharts
+- Toast notifications with React-Toastify
+- UI components using ShadCN
+- Responsive design with Tailwind CSS
+- Data tables with Ant Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React + Vite + TypeScript**: Modern frontend framework
+- **React Router**: Client-side routing
+- **Recharts**: Data visualization and analytics
+- **ShadCN**: UI component library
+- **Ant Design**: Advanced table UI
+- **Axios**: HTTP client for API calls
+- **Tailwind CSS**: Utility-first CSS framework
 
-## Expanding the ESLint configuration
+## Installation
+### Prerequisites
+Ensure you have:
+- Node.js (v16 or later)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Setup Steps
+1. Clone the frontend repository:
+   ```sh
+   git clone https://github.com/ayushman075/filer-frontend.git
+   cd filer-frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+   The app runs on `http://localhost:5173`
 
-- Configure the top-level `parserOptions` property like this:
+## Frontend Features
+### Authentication & Routing
+- `BrowserRouter` for navigation
+- Authenticated routes using `AuthProvider`
+- Login (`/login`), Signup (`/signup`), Home (`/`), and 404 page
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### File Upload
+- Uses a file input component to upload files
+- Sends data to the backend for processing
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Analytics Dashboard
+- **Credit Score Distribution** (Pie Chart)
+- **Monthly Applications & Credit Score Trend** (Line Chart)
+- **Top Banks by Volume** (Bar Chart)
+- **Loan Portfolio Overview** (Pie Chart with Loan Stats)
+- Uses `Recharts` for visual analytics
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Data Table
+- **Ant Design Table** with sorting, pagination, and search
+- Displays user credit details such as name, mobile, PAN, credit score, etc.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Deployment
+The frontend can be deployed on:
+- **Vercel**
+- **Netlify**
+- **Render**
+- **AWS Amplify**
+
+## Contact
+For any queries or issues, reach out at ayushman8521@gmail.com .
