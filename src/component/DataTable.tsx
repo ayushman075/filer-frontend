@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Input, Space } from "antd";
 import axiosInstance from "@/utils/axiosConfig";
 import UserDetail from "./UserDetail";
+import { replace, useNavigate } from "react-router-dom";
 
 
 const DataTable = () => {
@@ -11,7 +12,7 @@ const DataTable = () => {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState({ field: "createdAt", order: "descend" });
   const [selectedData, setSelectedData] = useState(null);
-
+const navigate=useNavigate();
   useEffect(() => {
     fetchData();
   }, [pagination.current, pagination.pageSize, search, sort]);
@@ -33,6 +34,9 @@ const DataTable = () => {
       setData(data);
       setPagination((prev) => ({ ...prev, total }));
     } catch (error) {
+      if(error?.status==401){
+        navigate('/login',{replace:true})
+      }
       console.error("Error fetching data:", error);
     }
     setLoading(false);
